@@ -10,7 +10,7 @@ import android.widget.Button;
 
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
-//import com.takahidesato.gradle.jokes.Joker;
+import com.takahidesato.gradle.jokes.Joker;
 
 /**
  * Created by tsato on 2/29/16.
@@ -33,8 +33,8 @@ public class MainActivityFragment extends Fragment {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //Joker joker = new Joker();
-                //Log.d("test", joker.getJoke());
+                Joker joker = new Joker();
+                Log.d("test", joker.getJoke());
             }
         });
 
