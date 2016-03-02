@@ -1,14 +1,16 @@
 package com.takahidesato.builditbigger;
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
+
+import com.takahidesato.androidjokeslib.DisplayActivity;
+import com.takahidesato.javajokeslib.Joker;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -49,5 +51,15 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void launchLibraryActivity(View view) {
+        Joker joker = new Joker();
+
+        Log.d("test", joker.getJoke());
+
+        Intent intent = new Intent(this, DisplayActivity.class);
+        intent.putExtra("joke", joker.getJoke());
+        startActivity(intent);
     }
 }

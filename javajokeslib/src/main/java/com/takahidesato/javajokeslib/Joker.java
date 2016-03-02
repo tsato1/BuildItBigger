@@ -1,4 +1,4 @@
-package com.takahidesato.gradle.jokes;
+package com.takahidesato.javajokeslib;
 
 public class Joker {
 
@@ -7,6 +7,6 @@ public class Joker {
     }
 
     public String getJoke() {
-        return "test joke";
+        return "funny joke!";
     }
 }
