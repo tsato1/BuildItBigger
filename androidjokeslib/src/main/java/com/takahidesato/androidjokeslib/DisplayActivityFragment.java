@@ -20,10 +20,10 @@ public class DisplayActivityFragment extends Fragment {
         Intent intent = getActivity().getIntent();
         String joke = intent.getStringExtra("joke");
 
-//        TextView textView = (TextView) view.findViewById(R.id.txv_joke);
-//        textView.setText(joke);
+        TextView textView = (TextView) view.findViewById(R.id.txv_joke);
+        textView.setText(joke);
 
-        Toast.makeText(getActivity(), joke, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(getActivity(), joke, Toast.LENGTH_SHORT).show();
 
         return view;
     }

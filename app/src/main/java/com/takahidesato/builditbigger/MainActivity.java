@@ -23,8 +23,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Manfred"));
-
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -60,10 +58,8 @@ public class MainActivity extends AppCompatActivity {
     public void launchLibraryActivity(View view) {
         Joker joker = new Joker();
 
-        Log.d("test", joker.getJoke());
+        Log.d(MainActivity.class.getSimpleName(), joker.getJoke());
 
-        Intent intent = new Intent(this, DisplayActivity.class);
-        intent.putExtra("joke", joker.getJoke());
-        startActivity(intent);
+        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Tak"));
     }
 }

@@ -1,6 +1,6 @@
 {
  "kind": "discovery#restDescription",
- "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/zPjiy-psF0hd9RiZWLB4imfqUQI\"",
+ "etag": "\"u_zXkMELIlX4ktyNbM2XKD4vK8E/kYKCI1okhqyFKGITwLhMd4CoxAU\"",
  "discoveryVersion": "v1",
  "id": "myApi:v1",
  "name": "myApi",
@@ -13,9 +13,9 @@
   "x32": "http://www.google.com/images/icons/product/search-32.gif"
  },
  "protocol": "rest",
- "baseUrl": "https://myApplicationId.appspot.com/_ah/api/myApi/v1/sayHi/",
+ "baseUrl": "https://sacred-alloy-123822.appspot.com/_ah/api/myApi/v1/sayHi/",
  "basePath": "/_ah/api/myApi/v1/sayHi/",
- "rootUrl": "https://myApplicationId.appspot.com/_ah/api/",
+ "rootUrl": "https://sacred-alloy-123822.appspot.com/_ah/api/",
  "servicePath": "myApi/v1/sayHi/",
  "batchPath": "batch",
  "parameters": {

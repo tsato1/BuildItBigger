@@ -7,6 +7,6 @@ public class Joker {
     }
 
     public String getJoke() {
-        return "funny joke!";
+        return "funny joke!!";
     }
 }
