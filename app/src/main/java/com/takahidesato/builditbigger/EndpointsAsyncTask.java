@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.util.Pair;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.api.client.extensions.android.http.AndroidHttp;
@@ -26,11 +27,18 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
 
     @Override
     protected String doInBackground(Pair<Context, String>... params) {
-        Joker joker = new Joker();
         if(myApiService == null) {  // Only do this once
+//            MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
+//                    .setRootUrl("https://id.appspot.com/_ah/api/");
+            
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(), new AndroidJsonFactory(), null)
-                    .setRootUrl("https://id.appspot.com/_ah/api/");
-            // end options for devappserver
+                    .setRootUrl("http://10.0.2.2:8080/_ah/api/") // 10.0.2.2 is localhost's IP address in Android emulator
+                    .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
+                        @Override
+                        public void initialize(AbstractGoogleClientRequest<?> abstractGoogleClientRequest) throws IOException {
+                            abstractGoogleClientRequest.setDisableGZipContent(true);
+                        }
+                    });
 
             myApiService = builder.build();
         }
@@ -39,7 +47,6 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
         String name = params[0].second;
 
         try {
-            Log.d("test", "say hi called in doinbackground");
             return myApiService.sayHi(name).execute().getData();
         } catch (IOException e) {
             Log.d(EndpointsAsyncTask.class.getSimpleName(), e.toString());
@@ -53,6 +60,6 @@ public class EndpointsAsyncTask extends AsyncTask<Pair<Context, String>, Void, S
         intent.putExtra("joke", result);
         context.startActivity(intent);
 
-        Log.d(EndpointsAsyncTask.class.getSimpleName(), result);
+        Log.d(EndpointsAsyncTask.class.getSimpleName(), "Result: " + result);
     }
 }

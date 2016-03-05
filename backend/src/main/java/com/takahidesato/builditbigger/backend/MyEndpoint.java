@@ -31,7 +31,7 @@ public class MyEndpoint {
         Joker joker = new Joker();
 
         MyBean response = new MyBean();
-        response.setData("Here is a joke, " + joker.getJoke());
+        response.setData("Here is a joke man, " + joker.getJoke());
 
         return response;
     }
