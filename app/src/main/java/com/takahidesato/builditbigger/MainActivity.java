@@ -10,18 +10,24 @@ import android.util.Pair;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.takahidesato.androidjokeslib.DisplayActivity;
 import com.takahidesato.javajokeslib.Joker;
 
 public class MainActivity extends AppCompatActivity {
+    private ProgressBar progressBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        progressBar = (ProgressBar) findViewById(R.id.progress_bar);
+        progressBar.setVisibility(View.GONE);
 
 //        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
 //        fab.setOnClickListener(new View.OnClickListener() {
@@ -60,6 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
         Log.d(MainActivity.class.getSimpleName(), joker.getJoke());
 
-        new EndpointsAsyncTask().execute(new Pair<Context, String>(this, "Tak"));
+        new EndpointsAsyncTask(progressBar).execute(new Pair<Context, String>(this, "Tak"));
     }
 }
