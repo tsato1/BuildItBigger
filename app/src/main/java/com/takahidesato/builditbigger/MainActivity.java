@@ -17,7 +17,7 @@ import com.takahidesato.androidjokeslib.DisplayActivity;
 import com.takahidesato.javajokeslib.Joker;
 
 public class MainActivity extends AppCompatActivity {
-    public static final String ID_GCE = "sacred-alloy-123822";
+    public static final String ID_GCE = "";
     public static final String ID_AD_UNIT = "ca-app-pub-3940256099942544/1033173712";
 
     private ProgressBar progressBar;
