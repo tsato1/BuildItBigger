@@ -44,7 +44,7 @@ dependencies {
     }
     compile 'com.android.support:appcompat-v7:23.2.0'
     compile 'com.android.support:design:23.2.0'
-    compile 'com.google.android.gms:play-services:8.4.0'
+    freeCompile 'com.google.android.gms:play-services:8.4.0'
     compile project(':androidjokeslib')
     compile project(':javajokeslib')
     compile project(path: ':backend', configuration: 'android-endpoints')
