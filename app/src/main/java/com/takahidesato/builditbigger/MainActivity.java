@@ -17,6 +17,9 @@ import com.takahidesato.androidjokeslib.DisplayActivity;
 import com.takahidesato.javajokeslib.Joker;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String ID_GCE = "";
+    public static final String ID_AD_UNIT = "ca-app-pub-3940256099942544/1033173712";
+
     private ProgressBar progressBar;
 
     @Override
@@ -59,13 +62,5 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    public void launchLibraryActivity(View view) {
-        Joker joker = new Joker();
-
-        Log.d(MainActivity.class.getSimpleName(), joker.getJoke());
-
-        new EndpointsAsyncTask(progressBar).execute(new Pair<Context, String>(this, "Tak"));
     }
 }

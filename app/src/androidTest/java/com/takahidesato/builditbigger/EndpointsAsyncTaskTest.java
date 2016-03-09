@@ -5,6 +5,8 @@ import android.support.test.InstrumentationRegistry;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
 
+import com.takahidesato.androidjokeslib.DisplayActivity;
+
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.TestName;
@@ -28,9 +30,13 @@ public class EndpointsAsyncTaskTest {
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(MainActivity.class);
 
     @Test
-    public void buttonShouldUpdateText(){
-        onView(withId(R.id.btn_joke)).perform(click());
-        onView(withText("Here is a joke man, funny joke!!!")).check(matches(isDisplayed()));
+    public void buttonExistsTest() {
+        onView(withId(R.id.btn_joke)).check(matches(isDisplayed()));
     }
 
+    @Test
+    public void buttonClickText(){
+        onView(withId(R.id.btn_joke)).perform(click());
+        onView(withText("funny joke!!!")).check(matches(isDisplayed()));
+    }
 }
