@@ -1,4 +1,4 @@
-# BuildItBigger
+# *BuildItBigger*
 
 **BuildItBigger** is an android application that fetches jokes from the GCE module and passes them to the Android Library for display.
 
