@@ -2,7 +2,7 @@
 
 **BuildItBigger** is an android application that fetches jokes from the GCE module and passes them to the Android Library for display.
 
-Udacity course project / Submitted by: **Takahide Sato**
+Udacity Course Project / Submitted by : **Takahide Sato**
 
 ## User Stories
 
@@ -21,7 +21,7 @@ The following **optional** features are implemented:
 * [ ] The app displays a loading indicator while the joke is being fetched from the server.
 * [ ] The root build.gradle file contains a task that will start up the GCE dev server, run all Android tests, and shutdown the dev server.
 
-## diagram
+## Diagram
 
 Here's a simple diagram of implementation of this app
 
